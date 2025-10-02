@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  crypto_agent:
+    build: .
+    container_name: crypto_agent
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - .:/app
+    command: python3 main.py
